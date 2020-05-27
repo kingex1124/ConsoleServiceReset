@@ -1,0 +1,12 @@
+﻿################################################################################
+# 這個 .gitignore 檔案由 Microsoft(R) Visual Studio 自動建立。
+################################################################################
+
+/.vs/ConsoleServiceReset
+/ConsoleServiceReset/bin/Debug
+/ConsoleServiceReset/obj
+/packages
+/WebApplicationTest/bin
+/WebApplicationTest/obj
+/WindowsServiceTest/bin/Debug
+/WindowsServiceTest/obj/Debug
