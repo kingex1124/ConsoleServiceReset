@@ -18,7 +18,11 @@ namespace ConsoleServiceReset
             //Program.RestartService("ATest", 10000);
         }
 
-
+        /// <summary>
+        /// reset IIS web Site service
+        /// </summary>
+        /// <param name="webSiteName"></param>
+        /// <param name="timeoutMilliseconds"></param>
         public static void RestartWebSiteService(string webSiteName,int timeoutMilliseconds)
         {
             var server = new ServerManager();
