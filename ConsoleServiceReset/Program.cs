@@ -14,10 +14,13 @@ namespace ConsoleServiceReset
     {
         static void Main(string[] args)
         {
-            Program.RestartWebSiteService("WebTest", 2000);
+            //Program.RestartWebSiteService("WebTest", 2000);
+            Program.RestartWebSiteService("A", 2000);
 
             //Program.RestartService("StockGateway", 15000);
-            Program.RestartService("ATest", 15000);
+            // Program.RestartService("ATest", 15000);
+            Program.RestartService("Test", 15000);
+
             Console.WriteLine("end");
             Console.ReadLine();
         }
@@ -37,10 +40,10 @@ namespace ConsoleServiceReset
     
                 var site = server.Sites.FirstOrDefault(s => s.Name == webSiteName);
 
-                // 取得站台目前狀態
-                Console.WriteLine(site.State);
                 if (site != null)
-                {                 
+                {
+                    // 取得站台目前狀態
+                    Console.WriteLine(site.State);
                     //stop the site
                     site.Stop();
 
@@ -76,6 +79,8 @@ namespace ConsoleServiceReset
             ServiceController service = new ServiceController(serviceName);
             try
             {
+                if (service.Site != null)
+                { 
                 TimeSpan timeout = TimeSpan.FromMilliseconds(timeoutMilliseconds);
 
                 //取得服務目前狀態
@@ -104,6 +109,7 @@ namespace ConsoleServiceReset
 
                 //取得服務重啟後的狀態
                 Console.WriteLine("重啟後:" + service.Status);
+                }
             }
             catch (Exception ex)
             {
